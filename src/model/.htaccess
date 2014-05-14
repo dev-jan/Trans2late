@@ -1,0 +1,3 @@
+# Deny all Access to this folder from outsite
+Order Deny,allow
+Deny from all
