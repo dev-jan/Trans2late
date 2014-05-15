@@ -19,7 +19,7 @@ class Helper {
 	 * Loads the default page footer
 	 */
 	public static function loadFooter() {
-		include ROOT.'view/footer.php';
+		include ROOT.'view/pagewrappers/footer.php';
 		die();
 	}
 	
