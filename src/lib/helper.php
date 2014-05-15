@@ -41,6 +41,13 @@ class Helper {
 	}
 	
 	/**
+	 * Checks if the current user is logged in, else it redirects to to login page
+	 */
+	public static function checkLoggedIn() {
+		Helper::redirectTo(WEBROOT . "login");
+	}
+	
+	/**
 	 * Redirects to another URL
 	 * @param <String> $url
 	 */

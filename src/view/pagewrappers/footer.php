@@ -1,4 +1,2 @@
-<div>
-	<span>(c) by Jan Bucher</span>
-</div>
+	<div id="footer">Developed by Jan Bucher</div>
 </html>
