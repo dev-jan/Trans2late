@@ -4,7 +4,7 @@
  */
 
 // Read the configuration file...
-require_once dirname(__FILE__).'/config.php';
+require_once dirname(__FILE__).'/../config.php';
 // Delete the serverurl from the url and cut it into small pizza pices
 $absoluteURL = str_replace(WEBROOT, "", $_SERVER["REQUEST_URI"]);
 $urlPices = explode("/", $absoluteURL);

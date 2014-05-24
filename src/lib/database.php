@@ -1,5 +1,5 @@
 <?php
-include_once dirname(__FILE__).'/config.php';
+include_once dirname(__FILE__).'/../config.php';
 /**
  * Class that grants access to the Database
  * This class is a singelton class!
