@@ -51,7 +51,6 @@ if ($controllerfounded == false) {
 
 // Lets load the controller with the action
 require 'controller/'.$controllerToLoad;
-$controllername::$param = $urlPices; //saves the URL params into the controller
 // Run the action, if the action exists
 if (method_exists($controllername, $action)) {
 	$controllername::$action();

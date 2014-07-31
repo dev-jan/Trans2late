@@ -1,7 +1,6 @@
 <?php
 $controllername = "IndexController";
 class IndexController {
-	public static $param;
 	public static function index() {
 		Helper::checkLoggedIn();
 		Helper::loadHeader("home");
