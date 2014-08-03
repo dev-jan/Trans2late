@@ -5,7 +5,8 @@ class SessionService {
 	 * @param String $username username of the currenty logged in user
 	 */
 	public static function createSession($username) {
-		// TODO: Implement Session management
+		// Create a new session with the standard php session 
+		$_SESSION["TRANS2LATE_USERNAME"] = $username;
 	}
 	
 	/**
@@ -13,7 +14,9 @@ class SessionService {
 	 * @return boolean TRUE if the user is authorized
 	 */
 	public static function checkSession() {
-		// TODO: Implement real check
-		return true;
+		if (isset($_SESSION["TRANS2LATE_USERNAME"])) {
+			return true;
+		}
+		return false;
 	}
 }

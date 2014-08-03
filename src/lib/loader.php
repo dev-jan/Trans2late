@@ -3,6 +3,8 @@
  * This file loads the requested controller
  */
 
+// Start PHP Session
+session_start();
 // Read the configuration file...
 require_once dirname(__FILE__).'/../config.php';
 // Delete the serverurl from the url and cut it into small pizza pices
