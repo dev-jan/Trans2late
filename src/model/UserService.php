@@ -15,13 +15,12 @@ class UserService {
 			return false;
 		}
 		
-		$query = "SELECT count(id) FROM user 
+		$query = "SELECT id FROM user
 					WHERE username = '$username' 
 					AND password = SHA2('$password$salt', 256)";
-		echo $query;
 		
 		$result = $db->query($query);
-		if ($result != null) {
+		if ($result->num_rows > 0) {
 			return true;
 		}
 		return false;
@@ -31,9 +30,11 @@ class UserService {
 		$db = Database::getDatabaseWrapper();
 		
 		$query = "SELECT salt FROM user WHERE username = '$username'";
+		echo $query;
 		$result = $db->query($query); 
 		if ($result != null) {
-			return $result->fetch_assoc()[1]["salt"];
+			$resultrow = $result->fetch_assoc();
+			return $resultrow["salt"];
 		}
 		else {
 			return null;

@@ -25,7 +25,7 @@
 </head>
 <body style="margin-top: 40px;">
 	<div class="container" style="margin: auto; position: absolute: top: 50%;">
-		<form action="login/check" method="post" class="form-signin" role="form" style="max-width: 250px; margin-left: auto; margin-right: auto; margin: ">
+		<form action="<?php echo WEBROOT;?>login/check" method="post" class="form-signin" role="form" style="max-width: 250px; margin-left: auto; margin-right: auto; margin: ">
 	        <h2 class="form-signin-heading" style="color: #CDCDCD">Login...</h2>
 	        <input name="username" type="text" class="form-control" placeholder="Username..." required autofocus>
 	        <input name="password" type="password" class="form-control" placeholder="Password..." style="margin-top: 10px;" required>
