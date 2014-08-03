@@ -30,7 +30,6 @@ class UserService {
 		$db = Database::getDatabaseWrapper();
 		
 		$query = "SELECT salt FROM user WHERE username = '$username'";
-		echo $query;
 		$result = $db->query($query); 
 		if ($result != null) {
 			$resultrow = $result->fetch_assoc();

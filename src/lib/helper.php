@@ -47,7 +47,10 @@ class Helper {
 	 * Checks if the current user is logged in, else it redirects to to login page
 	 */
 	public static function checkLoggedIn() {
-		Helper::redirectTo(WEBROOT . "login");
+		Helper::loadModel("SessionService");
+		if (!SessionService::checkSession()) {
+			Helper::redirectTo(WEBROOT."login");
+		}
 	}
 	
 	/**
