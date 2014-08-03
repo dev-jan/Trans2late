@@ -26,6 +26,11 @@ class UserService {
 		return false;
 	}
 	
+	/**
+	 * Return the Salt of a user (from the database)
+	 * @param String $username
+	 * @return String
+	 */
 	public static function getSaltOfUser ($username) {
 		$db = Database::getDatabaseWrapper();
 		
@@ -38,5 +43,20 @@ class UserService {
 		else {
 			return null;
 		}
+	}
+	
+	/**
+	 * Return the currently logged in user
+	 * @return Array
+	 */
+	public static function getCurrentUser () {
+		$db = Database::getDatabaseWrapper();
+		Helper::loadModel("SessionService");
+		$currentUsername = SessionService::getCurrentUsername();
+		
+		$query = "SELECT * FROM user WHERE username = '$currentUsername'";
+		$result = $db->query($query);
+		$user = $result->fetch_assoc();
+		return $user;
 	}
 }

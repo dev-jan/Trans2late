@@ -27,4 +27,12 @@ class SessionService {
 		// Destroy PHPSession
 		session_destroy();
 	}
+	
+	/**
+	 * Returns the username of the user that is currently logged in
+	 * @return String username
+	 */
+	public static function getCurrentUsername() {
+		return $_SESSION["TRANS2LATE_USERNAME"];
+	}
 }
