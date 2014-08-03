@@ -31,13 +31,16 @@ class Helper {
 		$raw = "";
 		if (isset($_POST[$name])) {
 			$raw = $_POST[$name];
-			$raw = htmlspecialchars($raw, ENT_COMPAT | ENT_HTML5 , "UTF-8");
-			$string = mysql_real_escape_string($raw);
-			return $string;
+		}
+		elseif (isset($_GET[$name])) {
+			$raw = $_GET[$name];
 		}
 		else {
 			return null;
 		}
+		$raw = htmlspecialchars($raw, ENT_COMPAT | ENT_HTML5 , "UTF-8");
+		$string = Database::escapeString($raw);
+		return $string;
 	}
 	
 	/**
