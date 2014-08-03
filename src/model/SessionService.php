@@ -19,4 +19,12 @@ class SessionService {
 		}
 		return false;
 	}
+	
+	/**
+	 * Destroy the session of the currently logged-in user
+	 */
+	public static function destorySession() {
+		// Destroy PHPSession
+		session_destroy();
+	}
 }

@@ -24,4 +24,10 @@ class LoginController {
 			include ROOT . 'view/login/loginpage.php';
 		}
 	}
+	
+	public static function logout() {
+		Helper::loadModel("SessionService");
+		SessionService::destorySession();
+		Helper::redirectTo(WEBROOT."login");
+	}
 }
