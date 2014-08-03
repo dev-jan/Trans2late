@@ -11,6 +11,7 @@
 	
 	<link href="<?php echo WEBROOT;?>assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="<?php echo WEBROOT;?>assets/css/global.css" rel="stylesheet" />
 	
 	<script src="<?php echo WEBROOT;?>assets/js/jquery.min.js"></script>
 	<script src="<?php echo WEBROOT;?>assets/js/bootstrap.min.js"></script>
