@@ -8,7 +8,7 @@ define("ROOT", str_replace("lib/" . basename(__FILE__), "", $path));
 class Helper {
 	/**
 	 * Loads the default page header
-	 * @param <String> $selectedMenu Menu that got preselected
+	 * @param String $selectedMenu Menu that got preselected
 	 */	
 	public static function loadHeader($selectedMenu) {
 		include ROOT.'controller/components/headerController.php';
@@ -25,7 +25,7 @@ class Helper {
 	
 	/**
 	 * Returns the escaped parameter (HTML special chars & SQL special chars)
-	 * @param <String> $name The name of the parameter
+	 * @param String $name The name of the parameter
 	 */
 	public static function getParameter($name) {
 		$raw = "";
@@ -49,10 +49,18 @@ class Helper {
 	
 	/**
 	 * Redirects to another URL
-	 * @param <String> $url
+	 * @param String $url
 	 */
 	public static function redirectTo($url) {
 		echo '<meta http-equiv="refresh" content="0; url='.$url.'" />';
 		die();
+	}
+	
+	/**
+	 * Load a specific model class
+	 * @param String $name
+	 */
+	public static function loadModel($name) {
+		require ROOT . "model/" . $name . ".php";
 	}
 }

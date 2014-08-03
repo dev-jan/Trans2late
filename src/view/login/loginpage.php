@@ -25,13 +25,16 @@
 </head>
 <body style="margin-top: 40px;">
 	<div class="container" style="margin: auto; position: absolute: top: 50%;">
-		<form class="form-signin" role="form" style="max-width: 250px; margin-left: auto; margin-right: auto; margin: ">
+		<form action="login/check" method="post" class="form-signin" role="form" style="max-width: 250px; margin-left: auto; margin-right: auto; margin: ">
 	        <h2 class="form-signin-heading" style="color: #CDCDCD">Login...</h2>
-	        <input type="text" class="form-control" placeholder="Username..." required autofocus>
-	        <input type="password" class="form-control" placeholder="Password..." style="margin-top: 10px;" required>
+	        <input name="username" type="text" class="form-control" placeholder="Username..." required autofocus>
+	        <input name="password" type="password" class="form-control" placeholder="Password..." style="margin-top: 10px;" required>
 	        <label class="checkbox" style="color: #CDCDCD">
 	          <input type="checkbox" value="remember-me" > Remember me
 	        </label>
+	        <?php if (isset($error)) {?>
+	        	<span style="color:red;">Error: Login incorrect</span>
+	        <?php }?>
 	        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 	</div>
