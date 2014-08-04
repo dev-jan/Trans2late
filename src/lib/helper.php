@@ -67,6 +67,15 @@ class Helper {
 	 * @param String $name
 	 */
 	public static function loadModel($name) {
-		require ROOT . "model/" . $name . ".php";
+		require_once ROOT . "model/" . $name . ".php";
+	}
+	
+	/**
+	 * Return the current url cutted into pices after each "/"
+	 * @return Array Url cutted into pices after each "/"
+	 */
+	public static function getUrlParams() {
+		$absoluteURL = str_replace(WEBROOT, "", $_SERVER["REQUEST_URI"]);
+		return explode("/", $absoluteURL);
 	}
 }
